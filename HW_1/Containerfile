@@ -1,0 +1,9 @@
+FROM golang:1.21
+WORKDIR /src
+COPY ./main /src/
+COPY ./go.mod /src/
+RUN CGO_ENABLED=0 GOOS=linux go build -o /bin/hw1 ./main.go
+
+FROM scratch
+COPY --from=0 /bin/hw1 /bin/hw1
+CMD ["/bin/hw1"]
