@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: hw2
+  labels: 
+    name: homework2
